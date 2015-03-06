@@ -64,7 +64,8 @@ namespace RandomKeyGen
                 }
                 diag.CloseDiag();
             })).Start();
-            diag.ShowDialog();
+            if (diag!= null && !diag.IsDisposed)
+                diag.ShowDialog();
 
             string output = "";
             for (int ii = 0; ii < keys.Count; ii++)
